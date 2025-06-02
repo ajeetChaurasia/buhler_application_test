@@ -1,0 +1,23 @@
+<div class="header-container">
+    <div class="header">
+        <img (click)="redirectTo('')" src="../../../assets/images/logo.png" alt="Bühler Logo" class="logo" />
+        <div class="header-right">
+            <span class="timestamp items">
+                <span class="material-icons icon">access_time</span>
+                {{timestamp}}
+            </span>
+            <span class="items user-profile" (click)="showUserMenu()">
+            <span class="material-icons-outlined icon">account_circle</span>
+                Operator
+            </span>
+
+            @if(showMenu){
+                <ul class="menu-list">
+                    @for (item of menuList; track item.name) {
+                       <li (click)="redirectTo(item.route)"> {{ item.name }}</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+    "data": [
+    {
+        "name": "Scale",
+        "status": "running",
+        "icon": "system_update_alt"
+    },
+    {
+        "name": "Attacher",
+        "status": "alarm",
+        "icon": "chrome_reader_mode"
+    },
+    {
+        "name": "Packer",
+        "status": "running",
+        "icon": "call_to_action"
+    },
+    {
+        "name": "Closer",
+        "status": "warning",
+        "icon": "grid_on"
+    }
+]
+}

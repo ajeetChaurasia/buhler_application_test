@@ -1,0 +1,39 @@
+.overview-container {
+    height: calc(100vh - 7.5rem);
+    .overview-workflow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        .line {
+            width: 8rem;
+            border: 0.125rem solid #2f970f;
+        }
+        .overview-item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                position: absolute;
+                top: 0.25rem;
+                right: 0.25rem;
+            }
+
+            .overview-item-box {
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                .big-icon{
+                    font-size: 36px;
+                }
+                .title {
+                    padding-top: 0.25rem;
+                }
+            }
+        }
+    }
+}
