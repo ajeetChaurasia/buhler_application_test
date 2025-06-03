@@ -1,15 +1,19 @@
 
 <app-navigation [machineData]="lineMachineData" (routeChange)="onRouteChange($event)"></app-navigation>
 
-
 @if(currentRoute === 'overview') {
   <div class="overview-container">
    <div class="overview-workflow">
      @for(item of lineMachineData; track item.name) {
-        <div class="overview-item" [ngStyle]="{'background': sharedService.extractIconAndColor(item.status).bgColor}">
-            <span class="icon" [ngClass]="getIconClassName(item.name)" [ngStyle]="{'color': sharedService.extractIconAndColor(item.status).color}">{{sharedService.extractIconAndColor(item.status).icon}}</span>
-            <div class="overview-item-box" [ngStyle]="{'color': sharedService.extractIconAndColor(item.status).textColor}">
-                <span class="big-icon" [ngClass]="getIconClassName(item.name)" >{{item.icon}}</span>
+      @let iconClassName = getIconClassName(item.name);
+      @let cardBgColor = sharedService.extractIconAndColor(item.status).bgColor;
+      @let statusIconColor = sharedService.extractIconAndColor(item.status).color;
+      @let statusIconName = sharedService.extractIconAndColor(item.status).icon;
+      @let boxTextColor = sharedService.extractIconAndColor(item.status).textColor;
+        <div class="overview-item" [ngStyle]="{'background': cardBgColor}">
+            <span class="icon" [ngClass]="iconClassName" [ngStyle]="{'color': statusIconColor}">{{statusIconName}}</span>
+            <div class="overview-item-box" [ngStyle]="{'color': boxTextColor}">
+                <span class="big-icon" [ngClass]="iconClassName" >{{item.icon}}</span>
                 <div class="title" >{{ item.name }}</div>
             </div>
         </div>

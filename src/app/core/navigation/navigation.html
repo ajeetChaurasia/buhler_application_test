@@ -1,12 +1,16 @@
 <menu class="menu-container">
 
     @for (item of machineData(); track $index) {
-        <li [ngStyle]="{'background': sharedService.extractIconAndColor(item.status).bgColor,
-         color: sharedService.extractIconAndColor(item.status).textColor}" 
+        @let tabBgColor = sharedService.extractIconAndColor(item.status).bgColor;
+        @let tabTextColor = sharedService.extractIconAndColor(item.status).textColor;
+        @let statusIconColor = sharedService.extractIconAndColor(item.status).color;
+        @let statusIconName = sharedService.extractIconAndColor(item.status).icon;
+        <li [ngStyle]="{'background': tabBgColor,
+         color: tabTextColor}" 
          class="menu-item"
          (click)="redirectTo(item.name.toLowerCase())">
             {{item.name}}
-            <span class="material-icons-outlined icon" [ngStyle]="{'color': sharedService.extractIconAndColor(item.status).color}">{{sharedService.extractIconAndColor(item.status).icon}}</span>
+            <span class="material-icons-outlined icon" [ngStyle]="{'color': statusIconColor}">{{statusIconName}}</span>
         </li>
     }
 </menu>

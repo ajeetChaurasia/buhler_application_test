@@ -81,6 +81,7 @@ export class Overview  implements OnInit {
    */
   onRouteChange(route: string): void {
     this.currentRoute = route;
+    this.sharedService.redirectTo(this.currentRoute);
   }
 
 }

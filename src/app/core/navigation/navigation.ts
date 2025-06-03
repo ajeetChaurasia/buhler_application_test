@@ -25,7 +25,6 @@ export class Navigation {
    */
   redirectTo(route: string): void {
     const path = '/overview/'+route;
-    this.sharedService.redirectTo(path);
     this.routeChange.emit(path);
   }
 
